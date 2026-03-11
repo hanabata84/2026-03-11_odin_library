@@ -42,3 +42,6 @@ bookLibrary.forEach(book => {
 
     table.appendChild(row)
 });
+
+const addBookBtn = document.querySelector('#add-book-btn')
+addBookBtn.addEventListener('click', ()=>console.log('I was clicked'))

@@ -18,6 +18,7 @@ a {
 
 table {
     border-collapse: collapse;
+    margin: 20px;
 }
 
 td, th {
@@ -31,4 +32,12 @@ td, th {
     flex-direction: column;
     align-items: center;
     padding: 200px;
+}
+
+#add-book-btn{
+    border: 1px solid rgb(221, 220, 224);
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 600;
 }
