@@ -4,6 +4,8 @@
     border: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    background-color: rgb(42, 42, 42);
+    color: rgb(221, 220, 224);
 }
 
 ul {
@@ -12,4 +14,21 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid rgb(69, 65, 75);
+    padding: 0.5rem;
+}
+
+#app{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 200px;
 }
