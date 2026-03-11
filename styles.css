@@ -21,12 +21,13 @@ table {
     margin: 20px;
 }
 
-td, th {
+td,
+th {
     border: 1px solid rgb(69, 65, 75);
     padding: 0.5rem;
 }
 
-#app{
+#app {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -34,10 +35,34 @@ td, th {
     padding: 200px;
 }
 
-#add-book-btn{
+#add-book-btn {
     border: 1px solid rgb(221, 220, 224);
     border-radius: 10px;
     padding: 10px 30px;
     font-size: 16px;
     font-weight: 600;
+}
+
+dialog {
+    margin: 150px 300px 300px 230px;
+    display: flex;
+}
+
+:modal {
+    height: 400px;
+    width: 400px;
+    border: 2px solid rgb(69, 65, 75);
+    border-radius: 10px;
+
+}
+
+::backdrop {
+    background-color: rgba(49, 45, 49, 0.359);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
 }

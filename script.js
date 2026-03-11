@@ -10,10 +10,10 @@ const bookLibrary = [
 
 function Book(id, title, author, pages, read) {
     this.id = id,
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.read = read
 }
 
 const table = document.querySelector('table')
@@ -44,4 +44,5 @@ bookLibrary.forEach(book => {
 });
 
 const addBookBtn = document.querySelector('#add-book-btn')
-addBookBtn.addEventListener('click', ()=>console.log('I was clicked'))
+const addBookModal = document.querySelector('#add-book-modal')
+addBookBtn.addEventListener('click', () => addBookModal.showModal())
