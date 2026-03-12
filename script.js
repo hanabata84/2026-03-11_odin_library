@@ -81,7 +81,8 @@ addBookBtn.addEventListener('click', (e) => {
     inputs.forEach(input => {
         newBookArr.push(input.value)
     });
-    const newBook = new Book(3, ...newBookArr)
+    const uuid = crypto.randomUUID()
+    const newBook = new Book(uuid, ...newBookArr)
     
     console.log(newBook)
     e.preventDefault()
