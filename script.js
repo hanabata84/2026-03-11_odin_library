@@ -15,6 +15,8 @@ const bookLibrary = [
     }
 ];
 
+const table = document.querySelector('table')
+
 function Book(id, title, author, pages, read) {
     this.id = id,
         this.title = title,
@@ -29,24 +31,28 @@ function createCells(cellName) {
     return newCell
 }
 
-const table = document.querySelector('table')
-bookLibrary.forEach(book => {
-    const row = document.createElement('tr')
+function showBooks() {
+    bookLibrary.forEach(book => {
+        const row = document.createElement('tr')
 
-    // title element
-    row.appendChild(createCells(book.title))
+        // title element
+        row.appendChild(createCells(book.title))
 
-    // author element
-    row.appendChild(createCells(book.author))
+        // author element
+        row.appendChild(createCells(book.author))
 
-    // pages element
-    row.appendChild(createCells(book.pages))
+        // pages element
+        row.appendChild(createCells(book.pages))
 
-    // read element
-    row.appendChild(createCells(book.read))
+        // read element
+        row.appendChild(createCells(book.read))
 
-    table.appendChild(row)
-});
+        table.appendChild(row)
+    });
+}
+
+showBooks()
+
 
 const openModalBtn = document.querySelector('#open-modal-btn')
 const modal = document.querySelector('.modal')
@@ -83,7 +89,10 @@ addBookBtn.addEventListener('click', (e) => {
     });
     const uuid = crypto.randomUUID()
     const newBook = new Book(uuid, ...newBookArr)
-    
-    console.log(newBook)
+    bookLibrary.push(newBook)
+    console.log(bookLibrary)
+    table.innerHTML = ''
+    showBooks()
+    closeModal()
     e.preventDefault()
 })
