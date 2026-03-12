@@ -43,7 +43,7 @@ th {
     font-weight: 600;
 }
 
-#cancel-modal-btn, #add-book-btn {
+#add-book-btn {
     border: 2px solid rgb(69, 65, 75);
     border-radius: 10px;
     padding: 10px 30px;
@@ -79,7 +79,7 @@ th {
     display: none;
 }
 
-.btn-close {
+#close-modal-btn {
     align-self: flex-end;
 }
 

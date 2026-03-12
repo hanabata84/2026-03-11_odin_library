@@ -27,7 +27,19 @@ function Book(id, title, author, pages, read) {
 
 function createCells(cellName) {
     const newCell = document.createElement('td')
-    newCell.textContent = cellName
+
+    if (cellName === 'delete') {
+        const delBtn = document.createElement('button')
+        delBtn.setAttribute('class','delete-book-btn')
+        const deleteIcon = document.createElement('i')
+        deleteIcon.setAttribute('class', 'material-icons')
+        deleteIcon.textContent = 'clear'
+        delBtn.appendChild(deleteIcon)
+        newCell.appendChild(delBtn)
+    } else {
+        newCell.textContent = cellName
+    }
+
     return newCell
 }
 
@@ -35,18 +47,21 @@ function showBooks() {
     bookLibrary.forEach(book => {
         const row = document.createElement('tr')
         row.setAttribute('data-id', book.id)
-        // title element
+
+        // title cell
         row.appendChild(createCells(book.title))
 
-        // author element
+        // author cell
         row.appendChild(createCells(book.author))
 
-        // pages element
+        // pages cell
         row.appendChild(createCells(book.pages))
 
-        // read element
+        // read cell
         row.appendChild(createCells(book.read))
 
+        //delete cell
+        row.appendChild(createCells('delete'))
         tbody.appendChild(row)
     });
 }
@@ -57,7 +72,7 @@ showBooks()
 const openModalBtn = document.querySelector('#open-modal-btn')
 const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
-const closeModalBtn = document.querySelector('.btn-close')
+const closeModalBtn = document.querySelector('#close-modal-btn')
 
 const openModal = () => {
     modal.classList.remove('hidden')
@@ -97,9 +112,3 @@ addBookBtn.addEventListener('click', (e) => {
     closeModal()
     e.preventDefault()
 })
-
-const h1 = document.querySelector('h1')
-h1.setAttribute('data-id','this-is-a-test')
-console.log(h1);
-
-
