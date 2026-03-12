@@ -115,5 +115,10 @@ addBookBtn.addEventListener('click', (e) => {
 
 const delBookBtns = document.querySelectorAll('.delete-book-btn')
 delBookBtns.forEach(delBookBtn => {
-    delBookBtn.addEventListener('click', ()=>console.log(delBookBtn.closest('tr')))
+    delBookBtn.addEventListener('click', ()=>{
+        const removeBookId = delBookBtn.closest('tr').dataset.id
+        const indexRemoveBookId = bookLibrary.indexOf(removeBookId)
+        console.log(removeBookId);
+        
+    })
 })
