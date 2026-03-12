@@ -1,13 +1,13 @@
 const bookLibrary = [
     {
-        id: 1,
+        id: "1",
         title: "The Hobbit",
         author: "JRR Tolkien",
         pages: 295,
         read: true
     },
     {
-        id: 2,
+        id: "2",
         title: "Game of Thrones",
         author: "GRR Martin",
         pages: 1000,
@@ -34,7 +34,7 @@ function createCells(cellName) {
 function showBooks() {
     bookLibrary.forEach(book => {
         const row = document.createElement('tr')
-
+        row.setAttribute('data-id', book.id)
         // title element
         row.appendChild(createCells(book.title))
 
@@ -97,3 +97,9 @@ addBookBtn.addEventListener('click', (e) => {
     closeModal()
     e.preventDefault()
 })
+
+const h1 = document.querySelector('h1')
+h1.setAttribute('data-id','this-is-a-test')
+console.log(h1);
+
+
