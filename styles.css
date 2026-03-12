@@ -35,7 +35,7 @@ th {
     padding: 200px;
 }
 
-#add-book-btn {
+#open-modal-btn {
     border: 1px solid rgb(221, 220, 224);
     border-radius: 10px;
     padding: 10px 30px;
@@ -43,7 +43,7 @@ th {
     font-weight: 600;
 }
 
-#cancel-modal-btn, #add-modal-btn {
+#cancel-modal-btn, #add-book-btn {
     border: 2px solid rgb(69, 65, 75);
     border-radius: 10px;
     padding: 10px 30px;

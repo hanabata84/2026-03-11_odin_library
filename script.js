@@ -23,7 +23,7 @@ function Book(id, title, author, pages, read) {
         this.read = read
 }
 
-function createCells(cellName){
+function createCells(cellName) {
     const newCell = document.createElement('td')
     newCell.textContent = cellName
     return newCell
@@ -48,7 +48,7 @@ bookLibrary.forEach(book => {
     table.appendChild(row)
 });
 
-const addBookBtn = document.querySelector('#add-book-btn')
+const openModalBtn = document.querySelector('#open-modal-btn')
 const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
 const closeModalBtn = document.querySelector('.btn-close')
@@ -58,12 +58,12 @@ const openModal = () => {
     overlay.classList.remove('hidden')
 }
 
-const closeModal = ()=> {
+const closeModal = () => {
     modal.classList.add('hidden')
     overlay.classList.add('hidden')
 }
 
-addBookBtn.addEventListener('click', openModal)
+openModalBtn.addEventListener('click', openModal)
 closeModalBtn.addEventListener('click', closeModal)
 overlay.addEventListener('click', closeModal)
 
@@ -71,4 +71,18 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
         closeModal()
     }
+})
+
+const addBookBtn = document.querySelector('#add-book-btn')
+const inputs = document.querySelectorAll('input')
+
+addBookBtn.addEventListener('click', (e) => {
+    let newBookArr = []
+    inputs.forEach(input => {
+        newBookArr.push(input.value)
+    });
+    const newBook = new Book(3, ...newBookArr)
+    
+    console.log(newBook)
+    e.preventDefault()
 })
