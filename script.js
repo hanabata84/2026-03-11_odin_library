@@ -5,6 +5,13 @@ const bookLibrary = [
         author: "JRR Tolkien",
         pages: 295,
         read: true
+    },
+    {
+        id: 2,
+        title: "Game of Thrones",
+        author: "GRR Martin",
+        pages: 1000,
+        read: true
     }
 ];
 
@@ -16,29 +23,27 @@ function Book(id, title, author, pages, read) {
         this.read = read
 }
 
+function createCells(cellName){
+    const newCell = document.createElement('td')
+    newCell.textContent = cellName
+    return newCell
+}
+
 const table = document.querySelector('table')
 bookLibrary.forEach(book => {
     const row = document.createElement('tr')
 
     // title element
-    const titleCell = document.createElement('td')
-    titleCell.textContent = book.title
-    row.appendChild(titleCell)
+    row.appendChild(createCells(book.title))
 
     // author element
-    const authorCell = document.createElement('td')
-    authorCell.textContent = book.author
-    row.appendChild(authorCell)
+    row.appendChild(createCells(book.author))
 
     // pages element
-    const pagesCell = document.createElement('td')
-    pagesCell.textContent = book.pages
-    row.appendChild(pagesCell)
+    row.appendChild(createCells(book.pages))
 
     // read element
-    const readCell = document.createElement('td')
-    readCell.textContent = book.read
-    row.appendChild(readCell)
+    row.appendChild(createCells(book.read))
 
     table.appendChild(row)
 });
