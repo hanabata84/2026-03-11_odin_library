@@ -44,5 +44,26 @@ bookLibrary.forEach(book => {
 });
 
 const addBookBtn = document.querySelector('#add-book-btn')
-const addBookModal = document.querySelector('#add-book-modal')
-addBookBtn.addEventListener('click', () => addBookModal.showModal())
+const modal = document.querySelector('.modal')
+const overlay = document.querySelector('.overlay')
+const closeModalBtn = document.querySelector('.btn-close')
+
+const openModal = () => {
+    modal.classList.remove('hidden')
+    overlay.classList.remove('hidden')
+}
+
+const closeModal = ()=> {
+    modal.classList.add('hidden')
+    overlay.classList.add('hidden')
+}
+
+addBookBtn.addEventListener('click', openModal)
+closeModalBtn.addEventListener('click', closeModal)
+overlay.addEventListener('click', closeModal)
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal()
+    }
+})
