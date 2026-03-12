@@ -112,3 +112,8 @@ addBookBtn.addEventListener('click', (e) => {
     closeModal()
     e.preventDefault()
 })
+
+const delBookBtns = document.querySelectorAll('.delete-book-btn')
+delBookBtns.forEach(delBookBtn => {
+    delBookBtn.addEventListener('click', ()=>console.log(delBookBtn.closest('tr')))
+})
