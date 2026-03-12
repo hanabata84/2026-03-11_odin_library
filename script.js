@@ -15,7 +15,7 @@ const bookLibrary = [
     }
 ];
 
-const table = document.querySelector('table')
+const tbody = document.querySelector('tbody')
 
 function Book(id, title, author, pages, read) {
     this.id = id,
@@ -47,7 +47,7 @@ function showBooks() {
         // read element
         row.appendChild(createCells(book.read))
 
-        table.appendChild(row)
+        tbody.appendChild(row)
     });
 }
 
@@ -86,12 +86,13 @@ addBookBtn.addEventListener('click', (e) => {
     let newBookArr = []
     inputs.forEach(input => {
         newBookArr.push(input.value)
+        input.value = ''
     });
     const uuid = crypto.randomUUID()
     const newBook = new Book(uuid, ...newBookArr)
     bookLibrary.push(newBook)
     console.log(bookLibrary)
-    table.innerHTML = ''
+    tbody.replaceChildren()
     showBooks()
     closeModal()
     e.preventDefault()
