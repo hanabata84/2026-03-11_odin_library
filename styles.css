@@ -43,15 +43,23 @@ th {
     font-weight: 600;
 }
 
+#cancel-modal-btn, #add-modal-btn {
+    border: 2px solid rgb(69, 65, 75);
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 600;
+}
 .modal {
     border-radius: 15px;
-    width: 450px;
+    width: 400px;
     min-height: 250px;
     position: absolute;
     z-index: 2;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .overlay {
@@ -72,11 +80,19 @@ th {
 }
 
 .btn-close {
-    align-content: flex-end;
+    align-self: flex-end;
 }
+
 form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     
+}
+
+input {
+    border: 2px solid rgb(69, 65, 75);
+    border-radius: 5px;
+    height: 25px;
+    margin-bottom: 10px;
 }
