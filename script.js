@@ -30,7 +30,7 @@ function createCells(cellName) {
 
     if (cellName === 'delete') {
         const delBtn = document.createElement('button')
-        delBtn.setAttribute('class','delete-book-btn')
+        delBtn.setAttribute('class', 'delete-book-btn')
         const deleteIcon = document.createElement('i')
         deleteIcon.setAttribute('class', 'material-icons')
         deleteIcon.textContent = 'clear'
@@ -64,6 +64,7 @@ function showBooks() {
         row.appendChild(createCells('delete'))
         tbody.appendChild(row)
     });
+    deleteBooks()
 }
 
 showBooks()
@@ -113,12 +114,19 @@ addBookBtn.addEventListener('click', (e) => {
     e.preventDefault()
 })
 
-const delBookBtns = document.querySelectorAll('.delete-book-btn')
-delBookBtns.forEach(delBookBtn => {
-    delBookBtn.addEventListener('click', ()=>{
-        const removeBookId = delBookBtn.closest('tr').dataset.id
-        const indexRemoveBookId = bookLibrary.indexOf(removeBookId)
-        console.log(removeBookId);
-        
+function deleteBooks() {
+    const delBookBtns = document.querySelectorAll('.delete-book-btn')
+    delBookBtns.forEach(delBookBtn => {
+        delBookBtn.addEventListener('click', () => {
+            const closestRow = delBookBtn.closest('tr')
+            const removeBookId = closestRow.dataset.id
+            bookLibrary.forEach((book, index) => {
+                if (book.id === removeBookId) {
+                    bookLibrary.splice(index, 1)
+                    closestRow.remove()
+                }
+            })
+        })
     })
-})
+}
+
