@@ -17,12 +17,14 @@ const bookLibrary = [
 
 const tbody = document.querySelector('tbody')
 
-function Book(id, title, author, pages, read) {
-    this.id = id,
+class Book {
+    constructor(id, title, author, pages, read) {
+        this.id = id,
         this.title = title,
         this.author = author,
         this.pages = pages,
         this.read = read
+    }
 }
 
 function createCells(cellName) {
@@ -68,7 +70,6 @@ function showBooks() {
 }
 
 showBooks()
-
 
 const openModalBtn = document.querySelector('#open-modal-btn')
 const modal = document.querySelector('.modal')
