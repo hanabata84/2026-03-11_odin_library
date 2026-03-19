@@ -1,5 +1,5 @@
 import { showBooks } from "./showBooks.js";
-import { openModal, closeModal } from "./addBookModal.js";
+import { openModal, closeModal } from "./addBook.js";
 
 showBooks()
 

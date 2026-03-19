@@ -4,16 +4,6 @@ import { showBooks, tbody } from "./showBooks.js"
 const modal = document.querySelector('.modal')
 const overlay = document.querySelector('.overlay')
 
-class Book {
-    constructor(id, title, author, pages, read) {
-        this.id = id,
-        this.title = title,
-        this.author = author,
-        this.pages = pages,
-        this.read = read
-    }
-}
-
 const openModal = () => {
     modal.classList.remove('hidden')
     overlay.classList.remove('hidden')
@@ -29,6 +19,16 @@ document.addEventListener('keydown', (e) => {
         closeModal()
     }
 })
+
+class Book {
+    constructor(id, title, author, pages, read) {
+        this.id = id,
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.read = read
+    }
+}
 
 const addBookBtn = document.querySelector('#add-book-btn')
 const inputs = document.querySelectorAll('input')
